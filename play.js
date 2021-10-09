@@ -1,4 +1,33 @@
-var question= document.querySelector(".question")
+
+var time = 45
+var timerEl = document.getElementById("timer")
+
+function updateTimer(){
+    var timeInterval= setInterval(function () {
+        // As long as the `timeLeft` is greater than 1
+        if (time > 1) {
+          // Set the `textContent` of `timerEl` to show the remaining seconds
+          timerEl.textContent = time + ' seconds';
+          // Decrement `timeLeft` by 1
+          time--;
+        } else if (time === 1) {
+          // When `timeLeft` is equal to 1, rename to 'second' instead of 'seconds'
+          timerEl.textContent = time + ' second';
+          time--;
+        } else {
+          // Once `timeLeft` gets to 0, set `timerEl` to an empty string
+          timerEl.textContent = '';
+          // Use `clearInterval()` to stop the timer
+          clearInterval(timeInterval);
+          return window.location.assign("/final.html")
+          // Call the `displayMessage()` function
+        
+        }
+      }, 1000);
+    
+}
+
+var question= document.querySelector("#question")
 var choices= Array.from(document.querySelectorAll(".answer-text"))
 var scoreText= document.querySelector("#score")
 var timer= document.querySelector("#timer")
@@ -65,9 +94,11 @@ newQuestion= () =>{
         return window.location.assign("/final.html")
     }
     questionNumber++
+    
     var questionIndex = Math.floor(Math.random() *questionsAvail.length)
     currentQuestion = questionsAvail[questionIndex]
     question.innerText=currentQuestion.question
+
     choices.forEach(choice =>{
         var number = choice.dataset["number"]
         choice.innerText= currentQuestion['choice' + number]
@@ -76,8 +107,6 @@ newQuestion= () =>{
     questionsAvail.splice(questionIndex, 1)
     newAnswers= true
     console.log(currentQuestion)
-    
-
 }
 choices.forEach(choice=>{
     choice.addEventListener("click", e=>{
@@ -85,10 +114,11 @@ choices.forEach(choice=>{
         newAnswers= false
         var selectedChoice = e.target
         var selectedAnswer= selectedChoice.dataset['number']
+
         let classToApply= selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect'
         if(classToApply==='correct'){
-            adjustScore(SCORE)
-        }
+            adjustScore(SCORE)}
+            else(time = time - 10)
         
         selectedChoice.parentElement.classList.add(classToApply)
         setTimeout(()=>{
@@ -106,4 +136,4 @@ adjustScore =num =>{
 }
 
 start()
-console.log(choices)
+updateTimer()

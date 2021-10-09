@@ -58,11 +58,11 @@ body{
 }
 #timer{
     width: 15rem;
-    height: 3rem;
-    border: .2rem solid yellow;
+    height: 4rem;
     margin-top: 10rem;
     border-radius: 4px;
-    
+    color: black;
+    background-color: gold;
 }
 
  
