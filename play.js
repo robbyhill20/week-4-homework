@@ -92,7 +92,7 @@ newQuestion= () =>{
     if(questionsAvail.length === 0 || questionNumber > MAX){
         localStorage.setItem("recentScore", score)
         
-        return window.location.assign("/final.html")
+        return window.location.assign("https://robbyhill20.github.io/Final-Page-/")
     }
     questionNumber++
     
