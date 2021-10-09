@@ -6,21 +6,21 @@ function updateTimer(){
     var timeInterval= setInterval(function () {
         // As long as the `timeLeft` is greater than 1
         if (time > 1) {
-          // Set the `textContent` of `timerEl` to show the remaining seconds
+          
           timerEl.textContent = time + ' seconds';
-          // Decrement `timeLeft` by 1
+        
           time--;
         } else if (time === 1) {
-          // When `timeLeft` is equal to 1, rename to 'second' instead of 'seconds'
+          
           timerEl.textContent = time + ' second';
           time--;
         } else {
-          // Once `timeLeft` gets to 0, set `timerEl` to an empty string
+          
           timerEl.textContent = '';
-          // Use `clearInterval()` to stop the timer
+        
           clearInterval(timeInterval);
           return window.location.assign("/final.html")
-          // Call the `displayMessage()` function
+         
         
         }
       }, 1000);
@@ -90,7 +90,8 @@ newQuestion()
 
 newQuestion= () =>{
     if(questionsAvail.length === 0 || questionNumber > MAX){
-        localStorage.setItem('RecentScore', score)
+        localStorage.setItem("recentScore", score)
+        
         return window.location.assign("/final.html")
     }
     questionNumber++

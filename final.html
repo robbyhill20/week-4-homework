@@ -11,18 +11,19 @@
 <body>
     <div class="container">
         <div id="end" class="flex-center flex-col">
-            <h1 id="finalScore">0</h1>
+            <h1 id="finalScore"></h1>
             <form class="end-container">
                 <h2 class="end-text">Enter your name and save your score!</h2>
                 <input type="text" name="name" id="username" placeholder="Your Name Here">
-                <button class="button" id="saveScore" type="submit" onClick="saveHighScore(event)" >Save</button>
+                <button class="button" id="saveScore" type="submit" onClick="saveHighScore(event)">Save</button>
             </form>
 
-            <a href="play.html" class="button">Re-Take Quiz</a>
-            <a href="index.html" class="button">Home</a>
+            <a href="play.html" onclick="window.open('play.html', '_self');"class="button">Re-Take Quiz
+                <a href="index.html" onclick="window.open('play.html', '_self');"class="button">Home</a>
         </div>
 
     </div>
 <script>src="end.js"</script>
 </body>
 </html>
+

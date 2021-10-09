@@ -1,8 +1,8 @@
 var username= document.querySelector("#username")
 var saveScore= document.querySelector("#saveScore")
 var finalScore= document.querySelector("#finalScore")
-var mostRecent= document.querySelector("mostRecentScore")
-
+var mostRecent= localStorage.getItem("recentScore")
+console.log(mostRecent)
 var highScores= JSON.parse(localStorage.getItem("highScores")) ||[]
 
 var maxScores = 5
