@@ -1,0 +1,77 @@
+body{
+    color: white
+}
+.answer-container{
+    display: flex;
+    margin-bottom: 0.8rem;
+    width: 100%;
+    border-radius: 6px;
+    background: rgb(230,227,0); 
+    background: linear-gradient(0deg, rgba(230,227,0,1) 9%, rgba(255,255,255,1) 100%);
+    font-size: 3rem;
+    min-width: 80rem;
+    color: black
+}
+
+.answer-container:hover{
+    cursor: pointer;
+    box-shadow:0 0.2rem 1.4rem 0 white;
+    transition: transform 100ms;
+    transform:scale(1.05);
+    transition: transform 100ms
+}
+
+.answer-prefix{
+    padding: 2rem 2.5rem;
+    color: black
+}
+
+.answer-text{
+    padding: 2rem;
+    width: 100%
+}
+
+.correct{
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(3,249,73,1) 100%);
+}
+.incorrect{
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgb(252, 2, 2) 0%, rgb(249, 3, 3) 100%);
+}
+#display{
+    display: flex;
+    justify-content: space-between;
+}
+
+.display-prefix{
+    text-align: center;
+    font-size: 4rem;
+    margin-top: 1rem;
+    color:whitesmoke
+}
+
+
+
+.display-text{
+    text-align: center
+}
+#timer{
+    width: 15rem;
+    height: 3rem;
+    border: .2rem solid yellow;
+    margin-top: 10rem;
+    border-radius: 4px;
+    
+}
+
+ 
+.score-box{
+    margin-top: 150px;
+}
+
+@media screen and (max-width: 768px){
+    .answer-container{
+        min-width: 35rem
+    }
+}
